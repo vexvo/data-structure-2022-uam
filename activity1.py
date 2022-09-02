@@ -6,6 +6,7 @@ class Activity1:
         self.language = 'Python'
         self.version = 3.0
         self.user_name = ""
+        self.country_list = []
     
     #3. MEthod that will prinnt the value of the variables
     def show_info(self):
@@ -68,21 +69,22 @@ class Activity1:
                 print("Error, expected a number")
 
 
-    def countries_data():
-        country_list = []
+    def countries_data(self):
         while True:
             try:
                 country_counter = int(input("How many countries will you name: "))
+                if country_counter == -1:
+                    break
                 for current_country in range(1, country_counter+1):
-                    country_name = str(input("    Country: "))
+                    country_name = input("    Country: ")
                     while True:
                         try:
                             country_population = int(input("        Population: "))
                             break
                         except:
                             print("Error, expected a number")
-                    country_list.append(current_country, country_name, country_population)
-                print(f'            Countries:\n                {country_list}')
+                    self.country_list.append(current_country, country_name, country_population)
+                print(f'            Countries:\n                {self.country_list}')
                 break
             except:
                 print("Error, expected a number")

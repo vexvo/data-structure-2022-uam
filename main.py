@@ -10,4 +10,5 @@ from activity1 import Activity1
 inst_activity1 = Activity1()
 
 #3 By using the instance we can access the methods
+inst_activity1.countries_data()
 inst_activity1.show_info()
