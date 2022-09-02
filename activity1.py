@@ -72,20 +72,18 @@ class Activity1:
     def countries_data(self):
         while True:
             try:
-                country_counter = int(input("How many countries will you name: "))
-                if country_counter == -1:
-                    break
-                for current_country in range(1, country_counter+1):
-                    country_name = input("    Country: ")
+                country_counter = int(input('How many countries will you name: '))
+                for i in range(0, country_counter):
+                    country_name = input('    Country: ')
                     while True:
                         try:
-                            country_population = int(input("        Population: "))
+                            country_population = int(input('        Population: '))
                             break
                         except:
                             print("Error, expected a number")
-                    self.country_list.append(current_country, country_name, country_population)
-                print(f'            Countries:\n                {self.country_list}')
+                    self.country_list.append((i, country_name, country_population))
+                print(f'-----Countries:\n                {self.country_list}')
                 break
             except:
-                print("Error, expected a number")
+                print('Error')
 
